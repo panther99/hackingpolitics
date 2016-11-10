@@ -1,3 +1,3 @@
 # hackingpolitics
 
-pogledati [wiki](./wiki)
+pogledati [wiki](wiki)
