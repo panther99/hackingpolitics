@@ -1,7 +1,7 @@
 /* {
 	border:1px solid blue;} */
  #prva {
-	position:absolute; 
+	position:static; 
 	top:30px; 
 	left:238px; 
 	width:300px;
@@ -10,7 +10,7 @@
  }
  
   #druga {
-	position:absolute; 
+	position:static; 
 	top:30px; 
 	left:545px; 
 	width:300px;
@@ -19,7 +19,7 @@
  }
  
   #treca {
-	position:absolute; 
+	position:static; 
 	top:30px; 
 	left:852px;	
 	width:300px;
@@ -28,7 +28,7 @@
  }
  
  #cetvrta {
-	position:absolute;
+	position:static;
 	top:406px;
 	left:239px;
 	width:912px;
