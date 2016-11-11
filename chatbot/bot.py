@@ -38,6 +38,31 @@ def webhook():
                     sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
+                    message_text.lower()
+
+                    if str(message_text) == "stranka" or str(message_text) == "stranke":
+                        # do something
+                        print("nasao sam stranke.")
+                    
+                    if str(message_text) == "klub" or str(message_text) == "klubovi":
+                        # do something
+                        print("nasao sam klub.")
+
+                    if str(message_text) == "grad" or str(message_text) == "gradovi":
+                        # do something
+                        print("nasao sam grad.")
+
+                    if str(message_text) == "glasanje" or str(message_text) == "glasanja":
+                        print("glasanje")
+
+                    if str(message_text) == "istrazivanje" or str(message_text) == "istrazivanja":
+                        print("istrazivanja")
+
+                    if str(message_text) == "novo" or str(message_text) == "aktuelno":
+                        print("novo")
+
+                    if str(message_text) == "saziv" or str(message_text) == "sazivi":
+                        print("saziv")
 
                     send_message(sender_id, "got it, thanks!")
 
