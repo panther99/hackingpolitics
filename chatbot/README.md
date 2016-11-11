@@ -1,2 +1,3 @@
 # chatbot
-ej cao, obrisi me
+
+Chatbot koji služi za informisanje javnosti o politici.
