@@ -1,3 +1,3 @@
 # chatbot
 
-Opis za chatbot-a
+Chatbot koji služi za informisanje javnosti o politici.
