@@ -1,3 +1,2 @@
 # chatbot
-
-ChatBot je jedna od najboljih stvari na svetu, ume da salje notifikacije na telefon u pola 3 ujutru, ume da iznervira politiku, i da skuva kafu kada nije vreme...
+ej cao, obrisi me
