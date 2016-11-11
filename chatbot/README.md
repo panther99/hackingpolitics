@@ -1,3 +1,2 @@
 # chatbot
-
-Chatbot koji služi za informisanje javnosti o politici.
+ChatBot je inovativna platforma, gde se korisnik može brže informisati o politici i desavanjima u parlamentu.
