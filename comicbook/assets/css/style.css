@@ -326,7 +326,6 @@ textarea.form-control {
 	background-size: cover;
 	padding: 50px 0;
 	color: #999;
-	border-bottom:thick solid #8FC6FC;
 }
 
 .calltoaction h2 {
@@ -443,7 +442,6 @@ textarea.form-control {
 
 .iconbox {
 	background: #fff;
-	border-bottom: 1px solid #d4d4d4;
 	text-align: center;
 	padding: 40px 20px;
 	margin: 0 0 20px;
