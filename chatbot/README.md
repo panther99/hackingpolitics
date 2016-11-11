@@ -1,2 +1,2 @@
 # chatbot
-ChatBot je inovativna platforma, gde se korisnik može brže informisati o politici i desavanjima u parlamentu.
+ChatBot je inovativna platforma koja služi bržem informisanju korisnika o politici i dešavanjima u parlamentu.
