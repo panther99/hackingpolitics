@@ -1,0 +1,50 @@
+/* {
+	border:1px solid blue;} */
+ #prva {
+	position:absolute; 
+	top:30px; 
+	left:238px; 
+	width:300px;
+	height:370px;
+	border:3px solid black;
+ }
+ 
+  #druga {
+	position:absolute; 
+	top:30px; 
+	left:545px; 
+	width:300px;
+	height:370px;
+	border:3px solid black;
+ }
+ 
+  #treca {
+	position:absolute; 
+	top:30px; 
+	left:852px;	
+	width:300px;
+	height:370px;
+	border:3px solid black;
+ }
+ 
+ #cetvrta {
+	position:absolute;
+	top:406px;
+	left:239px;
+	width:912px;
+	height:210px;
+	border:3px solid black;
+ }
+ 
+ .dugme1 {
+	 position:absolute;
+	top:750px;
+	left:500px;
+	width:300px;
+	height:300x; 
+ }
+ button.dugme1 {
+	 margin-top:20px;
+	 margin-bottom:20px;
+	 height:200px;
+ }
