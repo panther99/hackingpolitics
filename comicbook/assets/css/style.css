@@ -15,6 +15,7 @@ body {
 	font: 300 14px/1.8 'Raleway', sans-serif;
 	color: #666;
 	overflow-x: hidden;
+	font-family: Montserrat-Regular;
 }
 
 img {
@@ -417,7 +418,6 @@ textarea.form-control {
 	width: 100%;
 	left: 0;
 	text-align: center;
-	padding: 0 15px;
 	margin-bottom:15px;
 }
 .stripTitle{
