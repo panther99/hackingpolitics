@@ -345,6 +345,7 @@ textarea.form-control {
 .long-down {
 	margin-bottom: 40px;
 }
+button:focus { outline: none; }
 
 /* ---------------------------------------------- /*
  * Home
