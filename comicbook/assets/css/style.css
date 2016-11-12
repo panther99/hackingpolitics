@@ -399,6 +399,9 @@ textarea.form-control {
 	background-color: rgba(44, 62, 80, 0.3);
     background-image: url("../images/pattern.png");
 }
+.stranice{
+	background-color: rgba(0, 0, 0, 0.6);
+}
 
 .intro {
 	position: absolute;
@@ -515,6 +518,20 @@ textarea.form-control {
 	text-align: center;
 	padding: 40px 0;
 	color: #FFF;
+}
+
+.bottom {
+	color:red;
+}
+
+.navbar-center {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+	color:blue;
+}
+.navbar-center li{
+	display:inline;
+	padding-left: 15px;
 }
 
 .copyright {
