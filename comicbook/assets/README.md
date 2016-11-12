@@ -1,3 +1,0 @@
-# comicbook
-
-Opis za comicbook.
