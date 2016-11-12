@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Kategorije">
+        <menu>
+            <item
+                android:id="@+id/kategorije_stranke"
+                android:title="Stranke" />
+            <item
+                android:id="@+id/kategorije_klubovi"
+                android:title="Poslanički Klubovi" />
+            <item
+                android:id="@+id/kategorije_gradovi"
+                android:title="Gradovi" />
+            <item
+                android:id="@+id/kategorije_glasanja"
+                android:title="Glasanja" />
+            <item
+                android:id="@+id/kategorije_istrazivanja"
+                android:title="Istraživanja" />
+            <item
+                android:id="@+id/kategorije_aktuelno"
+                android:title="Aktuelno" />
+            <item
+                android:id="@+id/kategorije_sazivi"
+                android:title="Sazivi" />
+        </menu>
+    </item>
+
+</menu>
