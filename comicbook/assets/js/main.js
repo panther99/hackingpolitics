@@ -140,3 +140,5 @@ window.onclick = function(event) {
     }
   }
 }
+
+img.dot.dotScreen(320, 239.5, 0.69, 3.68);
