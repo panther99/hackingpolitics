@@ -1,34 +1,32 @@
 $(document).ready(function(){
-
-	var truth=false;
-	var audio1 = document.createElement('audio');
-	audio1.setAttribute('src','sound1.mp3');
 	
-	var condition1=false;
-	var condition2=false;
+	var condition2=true;
 	var condition3=false;
 	var condition4=false;
 	
-        $('#prva').hide();
-		$('#prva').fadeIn(2700);
-		$('#druga').hide();
-		$('#treca').hide();
-		$('#cetvrta').hide();
+		$('#jedan').hide();
+		$('#jedan').fadeIn(1200);
+		$('#dva').hide();
+		$('#tri').hide();
+		$('#cetri').hide();
 		
-		
-		$(document).keydown(function(e) {
-			if(e.which > 0) {
-				$('#druga').fadeIn(2700);
-				truth=true;
-			}
-			if(truth==true) {
-		$(document).keydown(function(e) {
-			if(e.which > 0) {
-				$('#treca').fadeIn(2700);
-				truth=false;
-			}
-		}); }
+	
+	$('#strip1').on('click',function(){
+	
+	if(condition2==true) {
+				$('#dva').fadeIn(1200);
+				condition2=false;
+				condition3=true;
+	}
+	else if(condition3==true) {
+			$('#tri').fadeIn(1200);
+				condition3=false;
+				condition4=true;
+	}
+	else if(condition4==true) {
+			$('#cetri').fadeIn(1200);
+			condition4=false;
+	}
 	});
-		
-		
+
 }); 
