@@ -53,6 +53,7 @@ $(document).ready(function(){
 	}
 	else if(condition4==true) {
 			$('#4').fadeIn(1200);
+			audio1.play();
 			condition4=false;
 	}
 	});
@@ -73,6 +74,7 @@ $(document).ready(function(){
 	}
 	else if(condition8==true) {
 			$('#8').fadeIn(1200);
+			audio2.play();
 			condition8=false;
 	}
 	});
@@ -92,6 +94,7 @@ $(document).ready(function(){
 	}
 	else if(condition12==true) {
 			$('#12').fadeIn(1200);
+			audio3.play();
 			condition12=false;
 	}
 	});
@@ -111,6 +114,7 @@ $(document).ready(function(){
 	}
 	else if(condition16==true) {
 			$('#16').fadeIn(1200);
+			audio1.play();
 			condition16=false;
 	}
 	});
