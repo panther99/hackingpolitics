@@ -1,7 +1,11 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 import os
 import sys
+import requests
 import json
-
+import time
+headers = {'Content-Type': 'application/json'}
 import requests
 from flask import Flask, request
 
@@ -38,33 +42,222 @@ def webhook():
                     sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
-                    message_text.lower()
+                    message_text = message_text.lower()
 
-                    if str(message_text) == "stranka" or str(message_text) == "stranke":
+                    
+                    if message_text == "stranka" or message_text == "stranke":
+                        
+                        print("nasao sam stranke.")
+                        r=requests.get('http://5.9.127.172/politicka-partija',headers=headers)
+                        datas=r.json()
+                        print datas
+                        text=""
+                        textlen = 0
+                        for i in datas['politickePartije']:
+                            if len(text+str(i['id'])+"."+i['naziv']+"\n") > 320:
+                                send_message(sender_id, unicode(text))
+                                text = ""
+                            else:
+                                text = text+str(i['id'])+"."+i['naziv']+"\n"
+                    
+                    if message_text[0:4] == "klub" or message_text[0:6] == "klubovi":
                         # do something
                         print("nasao sam stranke.")
-                    
-                    if str(message_text) == "klub" or str(message_text) == "klubovi":
-                        # do something
-                        print("nasao sam klub.")
+                        r=requests.get('http://5.9.127.172/poslanicki-klub',headers=headers)
+                        datas=r.json()
+                        #print datas
+                        text=""
+                        textlen = 0
+                        args = message_text.split(" ")
+                        query = ""
+                        for arg in range(1, len(args)):
+                            query = query + " " + args[arg]
+                            print query
+                        #print args[1].lower()
+                        try:
+                         t=args[1]
+                         test=1
+                        except IndexError:
+                           print 'sorry, no 5'
+                           test=0    
+                        for i in datas['poslanickiKlub']:
+                            if test==1:
+                                print "postoji drugi argument"
+                                #send_message(sender_id, unicode("imam drugi argument"))
+                                print query
 
-                    if str(message_text) == "grad" or str(message_text) == "gradovi":
+                                if unicode(i['naziv'].lower()).find(unicode(query.lower())) > -1:
+                                        #send_message(sender_id, unicode("poklopio sam"))
+                                    print("naso")
+                                    if len(text+str(i['id'])+"."+i['naziv']+"\n"+"link: http://5.9.127.172/poslanicki-klub/"+str(i['id'])+"\n") > 320:
+                                        send_message(sender_id, unicode(text))
+                                    else:
+                                        text = text+str(i['id'])+"."+i['naziv']+"\n"+"link: http://5.9.127.172/poslanicki-klub/"+str(i['id'])+"\n"
+                                        send_message(sender_id, unicode(text))
+                                        text = ""
+                            else:
+                                print "ja ulazim ovde"
+                                if len(text+str(i['id'])+"."+i['naziv']+"\n"+"link: http://5.9.127.172/poslanicki-klub/"+str(i['id'])+"\n") > 320:
+                                    send_message(sender_id, unicode(text))
+                                    text = ""
+                                else:
+                                    text = text+str(i['id'])+"."+i['naziv']+"\n"+"link: http://5.9.127.172/poslanicki-klub/"+str(i['id'])+"\n"
+
+                    if message_text == "grad" or message_text == "gradovi":
                         # do something
                         print("nasao sam grad.")
+                        print("nasao sam stranke.")
+                        r=requests.get('http://5.9.127.172/grad',headers=headers)
+                        datas=r.json()
+                        print datas
+                        text=""
+                        for i in datas['mesta']:
+                            text=text+str(i['id'])+"."+i['naziv']+"\n"
+                        print len(text)
+                        duzina=len(text)
+                        puta=duzina/ 320
+                        puta=round(puta)
+                        print puta
+                        for x in range(0, int(puta)):
+                            od=int(x*320)
+                            do=int(320*(x+1))
+                            print od
+                            print ("do ovog broja"+str(do))
+                            text[int(od):int(do)]
+                            send_message(sender_id, unicode(text[od:do]))
+                            time.sleep(0.5)
 
-                    if str(message_text) == "glasanje" or str(message_text) == "glasanja":
+
+                    if message_text == "glasanje" or message_text == "glasanja":
                         print("glasanje")
 
-                    if str(message_text) == "istrazivanje" or str(message_text) == "istrazivanja":
+                    if message_text == "istrazivanje" or message_text == "istrazivanja":
                         print("istrazivanja")
 
-                    if str(message_text) == "novo" or str(message_text) == "aktuelno":
+                    if message_text == "novo" or message_text == "aktuelno":
                         print("novo")
 
-                    if str(message_text) == "saziv" or str(message_text) == "sazivi":
+                    if message_text == "saziv" or message_text == "sazivi":
                         print("saziv")
+                        print("nasao sam grad.")
+                        print("nasao sam stranke.")
+                        r=requests.get('http://5.9.127.172/saziv',headers=headers)
+                        datas=r.json()
+                        print datas
+                        text=""
+                        textlen = 0
+                        for i in datas["sazivi"]:
+                            text=text+str(i['id'])+"."+i['naziv']+"\n"+"datum:"+i['od']+"\n"+"link: http://5.9.127.172/saziv/"+str(i['id'])+"\n"
+                            textlen = textlen + len(text)
+                            if textlen > 320:
+                                send_message(sender_id, unicode(text))
+                                text = ""
+                            send_message(sender_id, unicode(text))
+                            text = ""
 
-                    send_message(sender_id, "got it, thanks!")
+                    if len(message_text.split(" vs ")) == 2:
+                        poslanik1 = message_text.split(" vs ")[0]
+                        poslanik2 = message_text.split(" vs ")[1]
+                        
+                        print poslanik1
+                        print poslanik2
+                        id1=0
+                        id2=0
+                        #try: 
+                        #    t1= poslanik1.split(" ")[0] + " " + poslanik1.split(" ")[1] + " " + poslanik2.split(" ")[0] + " " + poslanik2.split(" ")[1]
+                        #    x=1
+                        #except:
+                        #    x=0
+                        r1=requests.get('http://5.9.127.172/poslanik?ime=' + poslanik1.split(" ")[0] + '%20' + poslanik1.split(" ")[1] ,headers=headers)
+                        datas1 = r1.json()
+                        
+                        if 'error' in datas1.keys():
+                            send_message(sender_id, unicode("Poslanik " + poslanik1.split(" ")[0] + " " + poslanik1.split(" ")[1] + " nije pronadjen."))
+                        else:
+                            id1=datas1.values()[0][0]['id']
+                       
+                        r2=requests.get('http://5.9.127.172/poslanik?ime=' + poslanik2.split(" ")[0] + '&prezime=' + poslanik2.split(" ")[1] ,headers=headers)
+                        datas2 = r2.json()
+                        if 'error' in datas2.keys():
+                            send_message(sender_id, unicode("Poslanik " + poslanik2.split(" ")[0] + " " + poslanik2.split(" ")[1] + " nije pronadjen."))
+                        else:
+                            id2=datas2.values()[0][0]['id']
+
+                        if id1!=0 and id2!=0:
+                           send_message(sender_id, unicode("link http://5.9.127.172/uporedi-poslanike?poslanik1="+str(id1)+"&poslanik2="+str(id2)))
+
+                    else:
+                        #send_message(sender_id, unicode("Morate uneti tekst u formatu: ime prvog poslanika vs ime drugog poslanika"))
+                        pass
+                        
+                         
+                    if message_text[0:8] == "poslanik":
+                        pass
+                        
+                        args = message_text.split(" ")
+                        try:
+                            t1=args[1]+args[2]
+                            test=1
+                        except:
+                            test=0
+                        
+                        if test==1:    
+                            ime=args[1]
+                            prezime = args[2]
+                            r_ime = requests.get('http://5.9.127.172/poslanik?ime=' + ime + '%20' + prezime,headers=headers)
+                            data = r_ime.json()
+                            if 'error' in data.keys():
+                                send_message(sender_id, unicode("Poslanik nije pronadjen."))
+                            else:
+                              id1=data.values()[0][0]['id']
+                              send_message(sender_id, unicode("link http://5.9.127.172/poslanik/"+str(id1)))
+                        else:
+                            send_message(sender_id, unicode("greska"))
+
+                    if message_text[0:5] == "osoba":
+                        print "usao sam u meksikanku"
+                        args = message_text.split(" ")
+                        
+                        if len(args) == 3: 
+                            print "asdasd"   
+                            ime=args[1]
+                            prezime=args[2]
+                            r_ime = requests.get('http://5.9.127.172/osoba',headers=headers)
+                            data = r_ime.json()
+                            store = ""
+                            for i in data['osobe']:
+                                print "usao sam u donji deo"
+                                if (ime.lower() == i['ime'].lower()) and (prezime.lower() == i['prezime'].lower()):
+                                    send_message(sender_id, unicode("Link: http://5.9.127.172/osoba/" + str(i['id'])))
+                        else:
+                            send_message(sender_id, unicode("greska"))
+
+                    if message_text[0:3] == "akt":     
+                        text = ""     
+                        print "Usao sam"     
+                        args = message_text.split(" ")
+                        print args    
+                        if len(args) == 2:
+                            print "usao sam ovde"         
+                            r = requests.get('http://5.9.127.172/akt?kljucnaRec=' + unicode(args[1]), headers=headers)
+                            podaci = r.json()
+                            for i in podaci['akta']:
+                                if len(text+"ID: " + str(i['akt_id']) + "\nNaslov " + i['naslov'] + "\nLink: " + i['url'] + "\n") > 320:
+                                    send_message(sender_id, unicode(text))
+                                    text = ""
+                                else:
+                                    text = text + "ID: " + str(i['akt_id']) + "\nNaslov: " + i['naslov'] + "\nLink: " + i['url'] + "\n"
+                        else:
+                            r = requests.get('http://5.9.127.172/akt', headers=headers)
+                            podaci = r.json()
+                            for i in podaci['akta']:
+                                if len(text + "ID: " + str(i['akt_id']) + "\nNaslov: " + i['naslov'] + "\nLink: " + i['url'] + "\n") > 320:
+                                    send_message(sender_id, unicode(text))
+                                    text = ""
+                                else:
+                                    text = text + "ID: " + str(i['akt_id']) + "\nNaslov: " + i['naslov'] + "\nLink: " + i['url'] + "\n"
+
+
 
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
@@ -80,7 +273,7 @@ def webhook():
 
 def send_message(recipient_id, message_text):
 
-    log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=message_text))
+    #og("sending message to {recipient}: {text}".format(recipient=recipient_id, text=message_text))
 
     params = {
         "access_token": "EAAUBpmWBIYsBANZCoIrlaJgNUxlFsodNdHD7T1J4uVsaIcbRqLay4rmvv6Qy9ZA9oVZBjtCb5kxmcBLrTVxkDHaluZC1Cvlb6LBkP2gVbINe3ZCeSIbdrv9W3odQOhr0zpMWsDWJf0JWpkw6YMSmsR7KrYHzWGYZBgz4p0DEGILQZDZD"
