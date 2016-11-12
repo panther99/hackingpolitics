@@ -431,6 +431,7 @@ textarea.form-control {
 }
 .stripTitle{
 	color:red;
+	font-family: Montserrat-Regular;
 }
 
 .intro h1{
@@ -698,7 +699,7 @@ textarea.form-control {
 	position: absolute;
 	left: 50%;
 	bottom: 40px;
-	border: 2px solid #8FC6FC;
+	border: 2px solid red;
 	border-radius: 50%;
 	height: 50px;
 	width: 50px;
@@ -725,7 +726,7 @@ textarea.form-control {
 
 .scroll-down span{
     position: relative;
-    color: #8FC6FC;
+    color: red;
     -webkit-animation-name: drop;
 	-webkit-animation-duration: 1s;
 	-webkit-animation-timing-function: linear;
