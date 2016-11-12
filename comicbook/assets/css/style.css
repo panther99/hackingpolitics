@@ -290,20 +290,6 @@ textarea.form-control {
 	font-size: 18px;
 }
 
-.ninjaImage {
-	width:50%;
-	height:auto;
-	left: 50%;
-	bottom: 40px;
-	border: 2px solid #8FC6FC;
-	border-radius: 50%;
-	margin-left: 25%;
-	margin-top:15px;
-	display: block;
-	z-index: 10;
-    text-align: center;
-}
-
 .pfblock-line {
 	background: rgba(135, 135, 135, 0.5);
 	width: 100px;
@@ -594,6 +580,7 @@ textarea.form-control {
 	position: relative;
 	width: 100%;
 	z-index: 998;
+	background: rgba(54, 25, 25, .6);
 }
 
 .navbar-custom {
