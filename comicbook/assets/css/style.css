@@ -15,6 +15,7 @@ body {
 	font: 300 14px/1.8 'Raleway', sans-serif;
 	color: #666;
 	overflow-x: hidden;
+	font-family: Montserrat-Regular;
 }
 
 img {
@@ -289,20 +290,6 @@ textarea.form-control {
 	font-size: 18px;
 }
 
-.ninjaImage {
-	width:50%;
-	height:auto;
-	left: 50%;
-	bottom: 40px;
-	border: 2px solid #8FC6FC;
-	border-radius: 50%;
-	margin-left: 25%;
-	margin-top:15px;
-	display: block;
-	z-index: 10;
-    text-align: center;
-}
-
 .pfblock-line {
 	background: rgba(135, 135, 135, 0.5);
 	width: 100px;
@@ -358,6 +345,7 @@ textarea.form-control {
 .long-down {
 	margin-bottom: 40px;
 }
+button:focus { outline: none; }
 
 /* ---------------------------------------------- /*
  * Home
@@ -374,6 +362,31 @@ textarea.form-control {
 	-o-background-size: cover;
 	background-size: cover;
 	padding: 0;
+}
+#home1 {
+	background: url(../images/cover.jpg);
+	background-color: #222;
+	background-attachment: static;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding: 0;
+}
+.home12 {
+	background: url(../images/cover.jpg);
+	background-color: #222;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding: 0;
+	position:static;
 }
 .margina{
 	margin-top:20px;
@@ -394,9 +407,13 @@ textarea.form-control {
 	-o-background-size: cover;
 	background-size: cover;
 }
+
 .stripBehind{
 	background-color: rgba(44, 62, 80, 0.3);
     background-image: url("../images/pattern.png");
+}
+.stranice{
+	background-color: rgba(0, 0, 0, 0.6);
 }
 
 .intro {
@@ -417,11 +434,22 @@ textarea.form-control {
 	width: 100%;
 	left: 0;
 	text-align: center;
-	padding: 0 15px;
 	margin-bottom:15px;
+	background: rgba(54, 25, 25, .6);
+}
+.strip1 {
+	background:white;
+	padding:15px;
+}
+.cusPad{
+	padding-left:0px;
+	padding-right:0px;
 }
 .stripTitle{
 	color:red;
+	font-family: Montserrat-Regular;
+	font-size:23px;
+	padding-bottom:15px;
 }
 
 .intro h1{
@@ -461,7 +489,12 @@ textarea.form-control {
 /* ---------------------------------------------- /*
  * Skills
 /* ---------------------------------------------- */
-
+.mymore{
+	position:absolute;
+	float:right;
+	bottom:1px;
+	right:30px;
+}
 .chart {
     display: inline-block;
     height: 140px;
@@ -505,6 +538,20 @@ textarea.form-control {
 	text-align: center;
 	padding: 40px 0;
 	color: #FFF;
+}
+
+.bottom {
+	color:red;
+}
+
+.navbar-center {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+	color:blue;
+}
+.navbar-center li{
+	display:inline;
+	padding-left: 15px;
 }
 
 .copyright {
@@ -560,6 +607,7 @@ textarea.form-control {
 	position: relative;
 	width: 100%;
 	z-index: 998;
+	background: rgba(54, 25, 25, .6);
 }
 
 .navbar-custom {
@@ -598,6 +646,10 @@ textarea.form-control {
 	font-weight: 500;
 	font-size: 25px;
     font-family: Montserrat-Regular;
+}
+.navbar-custom1 {
+    position: fixed;
+	width:100%;
 }
 
 .navbar-custom .dropdown-menu {
@@ -689,12 +741,13 @@ textarea.form-control {
 	position: absolute;
 	left: 50%;
 	bottom: 40px;
-	border: 2px solid #8FC6FC;
+	border: 2px solid red;
 	border-radius: 50%;
 	height: 50px;
+	display:block;
 	width: 50px;
 	margin-left: -15px;
-	display: block;
+	
 	z-index: 10;
     text-align: center;
 }
@@ -716,7 +769,7 @@ textarea.form-control {
 
 .scroll-down span{
     position: relative;
-    color: #8FC6FC;
+    color: red;
     -webkit-animation-name: drop;
 	-webkit-animation-duration: 1s;
 	-webkit-animation-timing-function: linear;
@@ -1096,4 +1149,50 @@ figure.effect-bubba:hover p {
 	}
 
 }
+/* Dropdown Button */
+.dropbtn {
+    background-color: #fff;
+    color: #000;
+    padding: 16px;
+    font-size: 11px;
+    border: none;
+	font-family:Montserrat-Regular;
+    cursor: pointer;
+	font-weight:500;
+	letter-spacing: 3px;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #fff;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
 
