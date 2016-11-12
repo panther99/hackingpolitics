@@ -11,6 +11,12 @@ $(document).ready(function(){
 	var condition14=true;
 	var condition15=false;
 	var condition16=false;
+	var audio1 = document.createElement('audio');
+		audio1.setAttribute('src', 'sound1.mp3');
+	var audio2 = document.createElement('audio');
+		audio2.setAttribute('src', 'sound2.mp3');
+	var audio3 = document.createElement('audio');
+		audio3.setAttribute('src', 'sound3.mp3');
 	
 		$('#1').hide();
 		$('#1').fadeIn(1200);
