@@ -214,6 +214,24 @@ def webhook():
                         else:
                             send_message(sender_id, unicode("greska"))
 
+                    if message_text[0:5] == "osoba":
+                        print "usao sam u meksikanku"
+                        args = message_text.split(" ")
+                        
+                        if len(args) == 3: 
+                            print "asdasd"   
+                            ime=args[1]
+                            prezime=args[2]
+                            r_ime = requests.get('http://5.9.127.172/osoba',headers=headers)
+                            data = r_ime.json()
+                            store = ""
+                            for i in data['osobe']:
+                                print "usao sam u donji deo"
+                                if (ime.lower() == i['ime'].lower()) and (prezime.lower() == i['prezime'].lower()):
+                                    send_message(sender_id, unicode("Link: http://5.9.127.172/osoba/" + str(i['id'])))
+                        else:
+                            send_message(sender_id, unicode("greska"))
+
                     if message_text[0:3] == "akt":     
                         text = ""     
                         print "Usao sam"     
