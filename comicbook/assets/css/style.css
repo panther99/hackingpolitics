@@ -435,6 +435,8 @@ textarea.form-control {
 .stripTitle{
 	color:red;
 	font-family: Montserrat-Regular;
+	font-size:23px;
+	padding-bottom:15px;
 }
 
 .intro h1{
