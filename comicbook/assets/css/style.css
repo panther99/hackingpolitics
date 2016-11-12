@@ -363,6 +363,31 @@ button:focus { outline: none; }
 	background-size: cover;
 	padding: 0;
 }
+#home1 {
+	background: url(../images/cover.jpg);
+	background-color: #222;
+	background-attachment: static;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding: 0;
+}
+.home12 {
+	background: url(../images/cover.jpg);
+	background-color: #222;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding: 0;
+	position:static;
+}
 .margina{
 	margin-top:20px;
 }
@@ -382,6 +407,7 @@ button:focus { outline: none; }
 	-o-background-size: cover;
 	background-size: cover;
 }
+
 .stripBehind{
 	background-color: rgba(44, 62, 80, 0.3);
     background-image: url("../images/pattern.png");
@@ -620,6 +646,10 @@ button:focus { outline: none; }
 	font-weight: 500;
 	font-size: 25px;
     font-family: Montserrat-Regular;
+}
+.navbar-custom1 {
+    position: fixed;
+	width:100%;
 }
 
 .navbar-custom .dropdown-menu {
