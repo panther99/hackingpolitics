@@ -474,7 +474,10 @@ textarea.form-control {
 /* ---------------------------------------------- /*
  * Skills
 /* ---------------------------------------------- */
-
+.mymore{
+float:right;
+margin-top:-30px;
+}
 .chart {
     display: inline-block;
     height: 140px;
@@ -719,9 +722,10 @@ textarea.form-control {
 	border: 2px solid red;
 	border-radius: 50%;
 	height: 50px;
+	display:block;
 	width: 50px;
 	margin-left: -15px;
-	display: block;
+	
 	z-index: 10;
     text-align: center;
 }
