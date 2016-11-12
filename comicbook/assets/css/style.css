@@ -420,7 +420,7 @@ textarea.form-control {
 	text-align: center;
 	margin-bottom:15px;
 }
-.strip1 {
+#strip1 {
 	border: solid red;
 	background: rgba(54, 25, 25, .5);
 	padding:10px;
