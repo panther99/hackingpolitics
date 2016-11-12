@@ -419,11 +419,15 @@ textarea.form-control {
 	left: 0;
 	text-align: center;
 	margin-bottom:15px;
+	background: rgba(54, 25, 25, .6);
 }
-#strip1 {
-	border: solid red;
-	background: rgba(54, 25, 25, .5);
-	padding:10px;
+.strip1 {
+	background:white;
+	padding:15px;
+}
+.cusPad{
+	padding-left:0px;
+	padding-right:0px;
 }
 .stripTitle{
 	color:red;
