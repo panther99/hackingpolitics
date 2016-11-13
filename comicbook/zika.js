@@ -1,12 +1,12 @@
-$(document).ready(function(){
-		$('#1').hide();
-		$('#2').hide();
-		$('#3').hide();
-		$('#4').hide();	
-		$('#5').hide();
-		$('#6').hide();	
-		$('#7').hide();
-		$('#8').hide();			
+$(document).ready(function(){	
+document.getElementById("1").style.opacity = "0";
+document.getElementById("2").style.opacity = "0";
+document.getElementById("3").style.opacity = "0";
+document.getElementById("4").style.opacity = "0";
+document.getElementById("5").style.opacity = "0";
+document.getElementById("6").style.opacity = "0";
+document.getElementById("7").style.opacity = "0";
+document.getElementById("8").style.opacity = "0";
 /*var myVar = setInterval(myTimer, 1000);//tajmer koji se odvija svake sekunde(postavi na 2 sekunde kasnije)
 function myTimer() {
 	//start <---
@@ -29,34 +29,34 @@ function myTimer() {
 window.onload = startInterval();
 var br=0;
 function startInterval() {
-var myVar = setInterval(pojava,2000);
+var myVar = setInterval(pojava,150);
 }
 
 function pojava() {
 	br=br+1;
 		if(br==1) {
-		$('#1').fadeIn(1000);
+		document.getElementById("1").style.opacity = "1";	
 	}
 		else if(br==2) {
-		$('#2').fadeIn(1000);
+		document.getElementById("2").style.opacity = "1";
 	}
 		else if(br==3) {
-		$('#3').fadeIn(1000);
+		document.getElementById("3").style.opacity = "1";
 	}
 		else if(br==4) {
-		$('#4').fadeIn(1000);
+		document.getElementById("4").style.opacity = "1";
 	}
 		else if(br==5) {
-		$('#5').fadeIn(1000);
+		document.getElementById("8").style.opacity = "1";
 	}
 		else if(br==6) {
-		$('#6').fadeIn(1000);
+		document.getElementById("7").style.opacity = "1";
 	}
 		else if(br==7) {
-		$('#7').fadeIn(1000);
+		document.getElementById("6").style.opacity = "1";
 	}
 		else if(br==8) {
-		$('#8').fadeIn(1000);
+		document.getElementById("5").style.opacity = "1";
 	}
 	else if(br==9) {
 		stop();
