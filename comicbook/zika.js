@@ -29,7 +29,7 @@ function myTimer() {
 window.onload = startInterval();
 var br=0;
 function startInterval() {
-var myVar = setInterval(pojava,150);
+var myVar = setInterval(pojava,350);
 }
 
 function pojava() {
