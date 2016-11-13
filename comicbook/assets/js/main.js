@@ -11,12 +11,6 @@ $(document).ready(function(){
 	var condition14=true;
 	var condition15=false;
 	var condition16=false;
-	var audio1 = document.createElement('audio');
-		audio1.setAttribute('src', 'sound1.mp3');
-	var audio2 = document.createElement('audio');
-		audio2.setAttribute('src', 'sound2.mp3');
-	var audio3 = document.createElement('audio');
-		audio3.setAttribute('src', 'sound3.mp3');
 	
 		$('#1').hide();
 		$('#1').fadeIn(1200);
@@ -53,7 +47,6 @@ $(document).ready(function(){
 	}
 	else if(condition4==true) {
 			$('#4').fadeIn(1200);
-			audio1.play();
 			condition4=false;
 	}
 	});
@@ -74,7 +67,6 @@ $(document).ready(function(){
 	}
 	else if(condition8==true) {
 			$('#8').fadeIn(1200);
-			audio2.play();
 			condition8=false;
 	}
 	});
@@ -94,7 +86,6 @@ $(document).ready(function(){
 	}
 	else if(condition12==true) {
 			$('#12').fadeIn(1200);
-			audio3.play();
 			condition12=false;
 	}
 	});
@@ -114,7 +105,6 @@ $(document).ready(function(){
 	}
 	else if(condition16==true) {
 			$('#16').fadeIn(1200);
-			audio1.play();
 			condition16=false;
 	}
 	});
