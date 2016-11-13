@@ -17,10 +17,8 @@ body {
 	overflow-x: hidden;
 	font-family: Montserrat-Regular;
 }
-
-img {
-	width: 80%;
-	height: auto;
+.imgimg {
+	
 }
 
 a {
@@ -446,6 +444,7 @@ button:focus { outline: none; }
 	background:white;
 	padding:15px;
 }
+
 .cusPad{
 	padding-left:0px;
 	padding-right:0px;
