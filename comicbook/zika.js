@@ -27,13 +27,12 @@ function myTimer() {
 	//end <--- */
 });
 window.onload = startInterval();
-var br=0;
+var br=1;
 function startInterval() {
-var myVar = setInterval(pojava,350);
+var myVar = setInterval(pojava,550);
 }
 
 function pojava() {
-	br=br+1;
 		if(br==1) {
 		document.getElementById("1").style.opacity = "1";	
 	}
@@ -60,7 +59,7 @@ function pojava() {
 	}
 	else if(br==9) {
 		stop();
-	}
+	}br=br+1;
 }
 
  function stop() {
