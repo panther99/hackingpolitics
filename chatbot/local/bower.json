@@ -1,0 +1,11 @@
+{
+  "name": "local",
+  "homepage": "https://github.com/panther99/hackingpolitics",
+  "authors": [
+    "Nikola S."
+  ],
+  "description": "Local files",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true
+}

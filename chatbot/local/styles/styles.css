@@ -1,0 +1,12 @@
+.poslanik-info, .poslanik-card {
+	padding: 20px !important;
+}
+
+img {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.hidden {
+	display: none;
+}

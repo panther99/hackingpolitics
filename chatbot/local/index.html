@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Local</title>
+	
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+	<div class="container">
+	
+		<div class="page-header">
+			<h1>
+				Narodna skupština privremene stenografske beleške
+				<small>19. januar 2016. Beograd</small>
+			</h1>
+		</div>
+
+		<div class="alert alert-info">
+			Sednica je počela u 10.05 časova. Sednicom predsedava Igor Bečić, potpredsednik Narodne skupštine.
+		</div>
+
+		<p>
+			01 Broj 06-2/5-16
+		</p>
+
+		<p>
+			Prvo vanredno zasedanje (neredigovane i neautorizovane) Narodne skupštine Republike Srbije (Drugi dan rada).
+		</p>
+
+		<div class="thumbnail poslanik-card" id="govor1">
+			
+			<div class="row">
+
+				<div class="col-md-12 text-center">
+
+					<div class="thumbnail poslanik-info">
+						
+						<img src="images/nenad-orevic.jpg"></img>
+
+						<h4>
+							<span class="label label-default">
+								Igor Bečić - Srpska napredna stranka
+							</span>
+						</h4>
+
+						<h4>
+							<span class="label label-default">
+								Predsedava
+							</span>
+						</h4>
+
+					</div>
+
+					<div class="text-left">
+					
+						<p>
+							Poštovane dame i gospodo narodni poslanici, nastavljamo rad sednice Prvog vanrednog zasedanja Narodne skupštine Republike Srbije u 2016. godini.
+						</p>
+
+						<p>
+						Na osnovu službene evidencije o prisutnosti narodnih poslanika, konstatujem da sednici prisustvuje 99 narodnih poslanika.
+						</p>
+
+						<p>
+						Radi utvrđivanja broja narodnih poslanika prisutnih u sali, ubacite kartice u identifikacione jedinice poslaničkog sistema za glasanje.
+						</p>
+
+						<p>
+						Konstatujem da je primenom elektronskog sistema za glasanje utvrđeno da je u sali prisutan 91 narodni poslanik, odnosno da su prisutna najmanje 84 narodna poslanika i da postoje uslovi za rad Narodne skupštine.
+						</p>
+
+						<p>
+						Da li neko želi da traži obaveštenje i objašnjenje na osnovu člana 287. Poslovnika Narodne skupštine?
+						</p>
+
+						<p>
+						Reč ima predstavnik poslaničke grupe narodna poslanica Elvira Kovač. Izvolite.
+						</p>
+
+					</div>
+
+				</div>
+				
+			</div>
+
+			<div class="row text-center">
+
+				<button class="btn btn-default" id="prikazi2">Prikaži sledeće</button>
+				
+			</div>
+
+		</div>
+
+		<div class="thumbnail poslanik-card hidden" id="govor2">
+			
+			<div class="row">
+
+				<div class="col-md-12 text-center">
+
+					<div class="thumbnail poslanik-info">
+						
+						<img src="http://www.otvoreniparlament.rs/wp-content/uploads/2008/10/elvira-kova%C4%8D-002-70x90.jpg"></img>
+
+						<h4>
+							<span class="label label-default">
+								Elvira Kovač | Savez vojvođanskih Mađara
+							</span>
+						</h4>
+
+					</div>
+
+					<div class="text-left">
+					
+						<p>
+							Poštovane dame i gospodo narodni poslanici, nastavljamo rad sednice Prvog vanrednog zasedanja Narodne skupštine Republike Srbije u 2016. godini.
+						</p>
+
+						<p>
+						Na osnovu službene evidencije o prisutnosti narodnih poslanika, konstatujem da sednici prisustvuje 99 narodnih poslanika.
+						</p>
+
+						<p>
+						Radi utvrđivanja broja narodnih poslanika prisutnih u sali, ubacite kartice u identifikacione jedinice poslaničkog sistema za glasanje.
+						</p>
+
+						<p>
+						Konstatujem da je primenom elektronskog sistema za glasanje utvrđeno da je u sali prisutan 91 narodni poslanik, odnosno da su prisutna najmanje 84 narodna poslanika i da postoje uslovi za rad Narodne skupštine.
+						</p>
+
+						<p>
+						Da li neko želi da traži obaveštenje i objašnjenje na osnovu člana 287. Poslovnika Narodne skupštine?
+						</p>
+
+						<p>
+						Reč ima predstavnik poslaničke grupe narodna poslanica Elvira Kovač. Izvolite.
+						</p>
+
+					</div>
+
+				</div>
+				
+			</div>
+
+			<div class="row text-center">
+
+				<button class="btn btn-default" id="prikazi3">
+					Prikaži sledeće
+				</button>
+
+				<button class="btn btn-default" id="prikazi1">
+					Prikaži prethodno
+				</button>
+		
+			</div>
+
+		</div>
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="js/script.js"></script>
+
+	<script>
+		$.each($('.poslanik-card'), function(){
+			console.log($(this).height());
+		});
+	</script>
+</body>
+</html>
