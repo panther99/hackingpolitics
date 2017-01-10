@@ -1,0 +1,139 @@
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <script   src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>  
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    
+    <title>Starter Template for Bootstrap</title>
+  </head>
+
+  <body>
+
+    <div class="container">
+     <button class="btn btn-success" onclick="pustivest()">Post news about istinomer</button>
+     <button class="btn btn-success" onclick="pustivest2()">post speach</button>
+
+      <div class="starter-template">
+        <h1>Izvrsi anketu</h1>
+        <p class="lead"></p>
+        <form id="formoid" action="http://127.0.0.1/make_research" method="get">
+        <div class="form-group">
+    <label for="exampleTextarea">Text vesti</label>
+    <textarea class="form-control" name="anketa" id="anketa" rows="3"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">odeljenje</label>
+    <input type="text" name="opcija1" class="odeljenje"  id="filter" placeholder="Da">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">smer</label>
+    <input type="text" name="filter2" class="form-control" id="filter2" placeholder="Ne">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-success">Submit</button>
+  </div>
+
+</form>
+<h1>Dodaj ucenika</h1>
+<form id="form2" action="http://127.0.0.1/add" method="get">
+        <div class="form-group">
+    <label for="exampleTextarea">Ime i prezime</label>
+    <textarea class="form-control" name="ime" id="ime"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">odeljenje</label>
+    <input type="text" name="odljenje" class="odeljenje"  id="odeljenje" placeholder="Da">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">smer</label>
+    <input type="text" name="smer" class="form-control" id="smer" placeholder="Ne">
+
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">kod</label>
+    <input type="text" name="kod" class="form-control" id="kod" placeholder="Ne">
+    
+  </div>
+
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-success">Submit</button>
+  </div>
+
+
+      </div>
+<script type="text/javascript">
+function pustivest() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     console.log("ok")
+    }
+  };
+  xhttp.open("GET", "pustivest", true);
+  xhttp.send();
+}
+function pustivest2() {
+var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     console.log("ok")
+    }
+  };
+  xhttp.open("GET", "pustivest2", true);
+  xhttp.send();
+}
+
+</script>
+<script type='text/javascript'>
+    /* attach a submit handler to the form */
+    $("#formoid").submit(function(event) {
+
+      /* stop form from submitting normally */
+      event.preventDefault();
+
+      /* get the action attribute from the <form action=""> element */
+      var $form = $( this ),
+          url = $form.attr( 'action' );
+
+      /* Send the data using post with element id name and name2*/
+      var posting = $.get( url, { anketa: $('#anketa').val(),filter2: $('#filter2').val() } );
+
+      /* Alerts the results */
+      posting.done(function( data ) {
+        alert('success');
+      });
+    });
+$("#form2").submit(function(event) {
+
+      /* stop form from submitting normally */
+      event.preventDefault();
+
+      /* get the action attribute from the <form action=""> element */
+      var $form = $( this ),
+          url = $form.attr( 'action' );
+
+      /* Send the data using post with element id name and name2*/
+      var posting = $.get( url, { ime: $('#ime').val(), odeljenje: $('#odeljenje').val(),smer: $('#smer').val(),kod: $('#kod').val()} );
+
+      /* Alerts the results */
+      posting.done(function( data ) {
+        alert('success');
+      });
+    });
+
+</script>
+
